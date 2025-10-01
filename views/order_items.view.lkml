@@ -38,6 +38,10 @@ view: order_items {
     type: sum
     value_format: "$0.00"
     drill_fields: [product.brand,users.gender,inventory_items.product_id]
+    link: {
+      label: "Redirect Link"
+      url: "https://gcpl256.cloud.looker.com/"
+    }
     sql: ${sale_price} ;;
   }
   measure: count {
