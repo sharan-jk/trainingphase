@@ -7,6 +7,21 @@ view: order_items {
     type: number
     sql: ${TABLE}.id ;;
   }
+  dimension: status {
+    type: string
+    sql: ${TABLE}.status ;;
+    html: |
+    {% if value == 'Cancelled' %}
+    <div style="background-color: #FFCCCC; color: #8B0000;">{{ value }}</div>
+    {% elsif value == 'Completed' %}
+    <div style="background-color: #CCFFCC; color: #006400;">{{ value }}</div>
+    {% elsif value == 'Pending' %}
+    <div style="background-color: #FFFFCC; color: #CC9900;">{{ value }}</div>
+    {% else %}
+    {{ value }}
+    {% endif %}
+    ;;
+  }
   dimension: inventory_item_id {
     type: number
     # hidden: yes
