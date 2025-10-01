@@ -30,4 +30,5 @@ view: inventory_items {
     type: count
     drill_fields: [id, products.id, products.item_name, order_items.count, order_items_vijaya.count]
   }
+
 }
