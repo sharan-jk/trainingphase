@@ -7,17 +7,20 @@ view: order_items {
     type: number
     sql: ${TABLE}.id ;;
   }
-   dimension: status {
+  dimension: status {
+    type: string
     sql: ${TABLE}.status ;;
-    html:<a href="#drillmenu" target="_self">
-          {% if value == 'CANCELLED' %}
-            <p style="color: black; background-color: lightblue; font-size:100%; text-align:center">{{ rendered_value }}</p>
-          {% elsif value == 'COMPLETED' %}
-            <p style="color: black; background-color: lightgreen; font-size:100%; text-align:center">{{ rendered_value }}</p>
-          {% else %}
-            <p style="color: black; background-color: orange; font-size:100%; text-align:center">{{ rendered_value }}</p>
-          {% endif %}
-      ;;
+    html: |
+    {% if value == 'Cancelled' %}
+    <div style="background-color: #FFCCCC; color: #8B0000;">{{ value }}</div>
+    {% elsif value == 'Completed' %}
+    <div style="background-color: #CCFFCC; color: #006400;">{{ value }}</div>
+    {% elsif value == 'Pending' %}
+    <div style="background-color: #FFFFCC; color: #CC9900;">{{ value }}</div>
+    {% else %}
+    {{ value }}
+    {% endif %}
+    ;;
   }
   dimension: inventory_item_id {
     type: number
