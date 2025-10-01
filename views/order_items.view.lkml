@@ -39,7 +39,7 @@ view: order_items {
     value_format: "$0.00"
     drill_fields: [product.brand,users.gender,inventory_items.product_id]
     link: {
-      label: "Redirect Link"
+      label: "SHARAN"
       url: "https://gcpl256.cloud.looker.com/"
     }
     sql: ${sale_price} ;;
