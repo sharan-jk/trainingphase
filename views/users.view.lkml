@@ -80,7 +80,7 @@ view: users {
           <ul>
             <li>Explore: {{ _explore._name }}</li>
             <li>Model: {{ _model._name }}</li>
-            <li>Is 'Users Country' field in Query: {{ users.country._in_query }}</li>
+            <li>Users Country: {{ users.country._in_query }}</li>
             <li>Query Timezone: {{ _query._query_timezone }}</li>
           </ul>
           ;;
