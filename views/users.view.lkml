@@ -72,6 +72,8 @@ view: users {
   }
   measure: count {
     type: count
+    label: "User Count"
+    description: "This report was run from Explore: {{ _explore.name }} in Model: {{ _model.name }}."
     drill_fields: [detail*]
   }
 
