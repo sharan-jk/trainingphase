@@ -72,9 +72,18 @@ view: users {
   }
   measure: count {
     type: count
-    label: "User Count"
-    description: "This report was run from Explore: {{ _explore.name }} in Model: {{ _model.name }}."
     drill_fields: [detail*]
+  }
+  measure: users_count {
+    type: count
+    html: |
+          <ul>
+            <li>Explore: {{ _explore._name }}</li>
+            <li>Model: {{ _model._name }}</li>
+            <li>Is 'Users Country' field in Query: {{ users.country._in_query }}</li>
+            <li>Query Timezone: {{ _query._query_timezone }}</li>
+          </ul>
+          ;;
   }
 
   # ----- Sets of fields for drilling ------
