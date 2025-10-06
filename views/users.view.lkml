@@ -76,7 +76,7 @@ view: users {
   }
   measure: users_count {
     type: count
-    html: |
+    html:
           <ul>
             <li>Explore: {{ _explore._name }}</li>
             <li>Model: {{ _model._name }}</li>
